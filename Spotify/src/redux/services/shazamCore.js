@@ -24,5 +24,15 @@ export const shazamCoreApi = createApi({
 
         return headers;
     }
+  }),
+  endpoints: (builder) => ({
+    getTopCharts: builder.query({query : () => 'charts/get-top-songs-in-country'}),
   })
 });
+
+export const {
+     useGetTopChartsQuery 
+ } = shazamCoreApi
+
+
+ 
