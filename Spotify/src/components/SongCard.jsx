@@ -5,7 +5,6 @@ import {playPause, setActiveSong} from '../redux/features/playerSlice'
 
 const SongCard = ({song, i, activeSong, isPlaying, data}) => {
 
-  console.log(data)
   const dispatch = useDispatch()
 
  const handlePauseClick = () => {
@@ -26,7 +25,7 @@ const SongCard = ({song, i, activeSong, isPlaying, data}) => {
     </div>
     <div className="mt-4 flex flex-col">
       <p className="font-semibold text-lg text-white truncate">
-        <Link to={`/songs/${song?.key}`}>{song.title}</Link>
+        <Link to={`/song/${song?.key}`}>{song.title}</Link>
       </p>
       <p className="text-sm truncate text-gray-300 mt-1">
         <Link to={song.artist ? `/artist/${song?.artist[0]?.adamid}` : '/top-artists'}>{song.subtitle}</Link>
