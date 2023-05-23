@@ -22,11 +22,11 @@ const Discover = () => {
         <select
           onChange={() => {}}
           value=''
-          className='bg-black text-gray-300 p-3 text-sm rounded-lg outline-nonesm:mt-0 mt-5 '>
+          className='bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5 '>
           {genres.map((genres) => {
             return (
               <option key={genres.value} value={genres.value}>
-                {genres.title}
+                {genres.title}              
               </option>
             );
           })}
