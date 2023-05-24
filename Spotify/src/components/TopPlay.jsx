@@ -60,7 +60,7 @@ const TopPlay = () => {
   const { data } = useGetTopChartsQuery();
   const divRef = useRef(null);
 
-  const topPlays = data?.tracks?.slice(0, 5);
+ 
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -70,6 +70,10 @@ const TopPlay = () => {
     dispatch(playPause(true));
   };
 
+
+  const topPlays = data?.tracks?.slice(0, 5);
+
+  
   return (
     <div
       ref={divRef}
@@ -96,7 +100,20 @@ const TopPlay = () => {
           ))}
         </div>
       </div>
-      <div className='w-full flex flex-col mt-8'>
+      
+
+      <Artists topPlays={topPlays} />
+      
+
+    </div>
+  );
+};
+
+const Artists =  ({topPlays}) => {
+
+  return(
+
+  <div className='w-full flex flex-col mt-8'>
         <div className='flex flex-row justify-between items-center'>
           <h2 className='text-white font-bold text-2xl'>Top Artist</h2>
           <Link to='/top-artists'>
@@ -127,8 +144,16 @@ const TopPlay = () => {
           ))}
         </Swiper>
       </div>
-    </div>
-  );
-};
+      )
 
-export default TopPlay;
+}
+
+export {
+  TopPlay
+}
+
+export{
+  Artists
+}
+
+

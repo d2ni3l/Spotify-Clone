@@ -5,12 +5,13 @@
 /* Active Navigation Link */
 
 .active {
-  @apply text-cyan-500;
+  @apply text-[#1ed760];
 }
 
 .active svg {
-  @apply text-cyan-500;
+  @apply text-[#1ed760];
 }
+
 
 .bar:nth-child(2) {
   animation-delay: 0.2s;

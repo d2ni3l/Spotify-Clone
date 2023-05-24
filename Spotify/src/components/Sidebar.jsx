@@ -5,6 +5,7 @@ import { logo } from "../assets";
 import { links } from "../assets/constants";
 import { HiOutlineMenu } from "react-icons/hi";
 const Sidebar = () => {
+
   const NavLinks = ({ handleClick }) => (
     <div className='mt-10 '>
       {links.map((link, i) => (
@@ -44,7 +45,7 @@ const Sidebar = () => {
           mobileMenuOpen ? "left-0" : "-left-full"
         }`}>
         <img src={logo} alt='logo' className='w-full h-14 object-contain' />
-        <NavLinks handleClick={() => setMobileOpen(false)} />
+        <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
     </>
   );
