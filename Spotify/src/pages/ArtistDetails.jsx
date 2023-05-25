@@ -7,7 +7,6 @@ import {AiFillInfoCircle} from 'react-icons/ai'
 import axios from 'axios'
 const ArtistDetails = () => {
   const [artistData, setArtistData] = useState([])
-  const [albumData, setAlbumData] = useState([])
 
   const {id: artistId } = useParams();
 
@@ -18,7 +17,7 @@ const ArtistDetails = () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '960b526e62msh28805eb7f9c0ee3p1254b1jsna69edb120ae5',
+      'X-RapidAPI-Key': '3573a95c8bmsheec14fa45a10fc1p18138bjsn66e8f46b5f4a',
       'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
     }
   };
@@ -42,38 +41,12 @@ const ArtistDetails = () => {
   }, [artistId])
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await (
-          artistData.data?.[0]?.relationships?.albums?.data.slice(0,3).map( (item) => {
-            axios.get('https://shazam.p.rapidapi.com/albums/get-details', {
-              params: {
-                id: `${item.id}`,
-              },
-           headers: {
-         'X-RapidAPI-Key': '960b526e62msh28805eb7f9c0ee3p1254b1jsna69edb120ae5',
-         'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
-       } 
-              
-            }).then(response => {setAlbumData(response.data)});
-            // Handle the response data for each item
-          })
-        );
-      } catch (error) {
-        console.error(error);
-        // Handle the error
-      }
-    };
-    console.log(albumData.data?.[0]?.attributes)
-    
-
-    fetchData();
+  
     
   }, [artistId])
 
 
-  // data
-
+console.log(artistData.data?.[0])
   
 
 
@@ -94,14 +67,13 @@ const ArtistDetails = () => {
         <DetailsHeader artistId={artistId} artistData={artistData.data?.[0]}/> 
         <div className="pt-12"></div>
 
-        <div>
+        <div className="flex justify-between">
           <a className="text-white font-semibold underline cursor-pointer flex items-center gap-2" href={artistData.data?.[0]?.attributes.url}><AiFillInfoCircle className="text-white" size='20'/> More info</a>
+          <h2 className="text-gray-500 font-black text-xl"><span> Albums Released:</span> {artistData.data?.[0].relationships?.albums?.data.length}</h2>
+
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-white font-black text-xl">Recent Albums</h2>
-          
-        </div>
+        
 
 
         
