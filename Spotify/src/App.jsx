@@ -21,7 +21,7 @@ const App = () => {
               <Route path="/top-charts" element={<TopCharts />} />
               <Route path="/artists/:id" element={<ArtistDetails />} />
               <Route path="/song/:songid" element={<SongDetails />} />
-              <Route path="/search/:searchTerm" element={<Search />} />
+              <Route path="/search" element={<Search />} />
             </Routes>
           </div>
           <div className="xl:sticky relative top-0 h-fit">
