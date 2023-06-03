@@ -4,17 +4,8 @@ import { RiCloseLine } from "react-icons/ri";
 import { logo } from "../assets";
 import { links } from "../assets/constants";
 import { HiOutlineMenu } from "react-icons/hi";
-import {AiFillCloseCircle} from 'react-icons/ai'
+import {AiOutlineClose} from 'react-icons/ai'
 const Sidebar = () => {
-
-  const [windowSize, setWindowSize] = useState('')
-
-  useEffect(() => {
-   function getWindowSize (e) {
-    setWindowSize(window.innerWidth)
-   }
-   getWindowSize()
-  }, [windowSize])
 
   const NavLinks = ({ handleClick }) => (
     <div className='mt-10 '>
@@ -37,6 +28,8 @@ const Sidebar = () => {
 
   const [mobileMenu, setMobileMenu] = useState(false)
 
+ 
+
   return (
     <>
       <div className='md:flex hidden  flex-col w-[240px] py-10 px-4 bg-[#191624] '>
@@ -52,10 +45,16 @@ const Sidebar = () => {
 
       
           {
-            mobileMenu ? <div className="transition duration-300 z-50 absolute right-0 bg-transparent backdrop-blur-xl border-purple-900 border-l-2 border-b-2 rounded-tl-md rounded-bl-md  w-1/2 h-screen">
-            <div className="flex justify-between border-red-500 border-2 py-2">
-            <AiFillCloseCircle/>
-            
+            mobileMenu ? <div className="transition duration-300 z-50 absolute right-0 bg-transparent backdrop-blur-xl border-purple-500 border-l-2 border-b-2 rounded-tl-md rounded-bl-md  w-1/2 h-screen">
+            <div className="flex justify-between py-2 mx-5 items-center" onClick={() => {setMobileMenu(false)}}>
+            <AiOutlineClose className="text-3xl text-white"/>
+            <img className='w-32 p-6' src={logo}  alt="" />
+            </div>
+
+            <div onClick={() => {
+              setMobileMenu(false)
+            }}>
+              <NavLinks/>
             </div>
             </div> 
             : null
