@@ -44,11 +44,15 @@
   scrollbar-width: none; /* Firefox */
 }
 
-
-.outline-input{
-  
+html{
+  overflow-x: hidden;
 }
 
 .input-outline:focus{
   outline: 2px solid #22c55e;
+}
+
+main{
+  min-height: 100vh !important;
+  min-width: 100vw !important;
 }
