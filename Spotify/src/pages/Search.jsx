@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Search = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [searchData, setSearchData] = useState([]);
+  const [searchData, setSearchData] = useState(['false']);
 
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const dispatch = useDispatch();
@@ -33,12 +33,21 @@ const Search = () => {
       });
   };
 
-  const artistSearchdata = searchData?.data?.artists?.hits;
-  const tracksSearchdata = searchData?.data?.tracks?.hits;
+
+
+
+
+  
+
+
+  const artistSearchdata = searchData?.data?.artists?.hits 
+  const tracksSearchdata = searchData?.data?.tracks?.hits 
+
+
+
 
 
 const data = tracksSearchdata?.[0].track
-  
     const handlePauseClick = () => {
         dispatch(playPause(false));
       };
