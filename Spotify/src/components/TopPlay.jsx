@@ -64,7 +64,7 @@ const TopPlay = () => {
       
 
       <Artists topPlays={topPlays} />
-      
+      <div className="pt-3"></div>
 
     </div>
   );
