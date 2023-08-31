@@ -45,7 +45,7 @@ const Sidebar = () => {
 
       
           {
-            mobileMenu ? <div className="transition duration-300 z-50 absolute right-0 bg-transparent backdrop-blur-xl border-purple-500 border-l-2 border-b-2 rounded-tl-md rounded-bl-md  w-1/2 h-screen">
+            mobileMenu ? <div className="transition duration-300 z-50 fixed right-0 bg-transparent backdrop-blur-xl border-green-500 border-l-2 border-b-2 rounded-tl-md rounded-bl-md  w-[80%] h-screen">
             <div className="flex justify-between py-2 mx-5 items-center" onClick={() => {setMobileMenu(false)}}>
             <AiOutlineClose className="text-2xl text-white"/>
             <img className='w-32 p-6' src={logo}  alt="" />
