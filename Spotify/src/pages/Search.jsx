@@ -116,9 +116,9 @@ const data = tracksSearchdata?.[0].track
           return (
             <>
               <TopChartCard
-                song={song.track}
+                song={song?.track}
                 i={i}
-                key={song.track.key}
+                key={song?.track?.key}
                 isPlaying={isPlaying}
                 activeSong={activeSong}
                 handlePauseClick={handlePauseClick}
@@ -147,16 +147,16 @@ const SearchArtistComp = ({ artistSearchdata }) => {
               key={i}
               style={{ width: "25%", height: "auto" }}
               className='shadow-lg rounded-full animate-slideright  m-5'>
-              <Link to={`/artists/${song?.artist.adamid}`}>
+              <Link to={`/artists/${song?.artist?.adamid}`}>
                 <img
-                  src={song?.artist.avatar}
-                  alt={song?.artist.name}
+                  src={song?.artist?.avatar}
+                  alt={song?.artist?.name}
                   className='rounded-full object-cover w-full border  shadow-[#17072e] shadow-xl '
                 />
               </Link>
               <div className='flex justify-center'>
                 <p className='text-white text-xl pt-2 capitalize font-black'>
-                  {song?.artist.name}
+                  {song?.artist?.name}
                 </p>
               </div>
             </div>

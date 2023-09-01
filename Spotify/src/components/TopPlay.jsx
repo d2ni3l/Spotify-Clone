@@ -53,7 +53,7 @@ const TopPlay = () => {
             <TopChartCard
               song={song}
               i={i}
-              key={song.key}
+              key={song?.key}
               isPlaying={isPlaying}
               activeSong={activeSong}
               handlePauseClick={handlePauseClick}
@@ -95,7 +95,7 @@ const Artists =  ({topPlays}) => {
               key={song?.key}
               style={{ width: "25%", height: "auto" }}
               className='shadow-lg rounded-full animate-slideright'>
-              <Link to={`/artist/${song?.artists[0].adamid}`}>
+              <Link to={`/artist/${song?.artists[0]?.adamid}`}>
                 <img
                   src={song?.images.background}
                   alt={song?.artists}
@@ -133,7 +133,7 @@ const TopChartCard = ({
           <Link to={`/song/${song?.key}`}>
             <p className='text-lg sm:text-xl font-bold  text-white'>{TruncateString(song?.title, 27)}</p>
           </Link>
-          <Link to={`/artists/${song?.artists[0].adamid}`}>
+          <Link to={`/artists/${song?.artists?.[0]?.adamid}`}>
             <p className=' text-sm sm:text-base font-bold  text-gray-300 mt-1'>
               {song?.subtitle}
             </p>
