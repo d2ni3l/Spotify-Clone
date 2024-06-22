@@ -14,16 +14,23 @@ const App = () => {
   const { activeSong } = useSelector((state) => state.player);
   const ApiShutDown = () => (
     <div className='text-red-500 absolute bg-red-100 z-[1000] w-screen h-screen flex items-center justify-center flex-col'>
-      <h1 className='font-bold text-4xl'>
-        Api Deprecated but you can still you the funtionality as usual
-        <a
-          target='_blank'
-          className='underline'
-          href='https://rapidapi.com/apidojo/api/shazam/playground/apiendpoint_c15fbc17-5fcb-4e6f-a785-07434c31e176'>
-          Rapid Api Link
-        </a>
+      <h1 className='font-bold text-3xl flex flex-col justify-center items-center'>
+        <span>
+          Api Deprecated but you can still you the funtionality as usual
+        </span>
+        <span>
+        
+          <a
+            target='_blank'
+            className='underline'
+            href='https://rapidapi.com/apidojo/api/shazam/playground/apiendpoint_c15fbc17-5fcb-4e6f-a785-07434c31e176'>
+            Rapid Api Link
+          </a>
+        </span>
       </h1>
-      <a href='/search' className="font-bold text-3xl underline">search page</a>
+      <a href='/search' className='font-bold text-3xl underline'>
+        search page
+      </a>
     </div>
   );
   return (
